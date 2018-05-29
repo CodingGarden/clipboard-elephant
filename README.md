@@ -1,5 +1,19 @@
 # Clipboard Elephant
 
+---
+
+## Setup
+
+```sh
+cd electron-quick-start
+npm install
+npm start
+```
+
+---
+
+## Agenda
+
 * [x] What is Electron?
 * [x] Clone Electron QuickStart
 * [x] Create Tray Icon
