@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Clipboard Elephant</title>
+    <link rel="stylesheet" href="node_modules/bulma/css/bulma.css">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main id="app">
+      <nav class="panel">
+        <p class="panel-heading has-text-centered">
+          {{title}}
+        </p>
+        <a
+          class="panel-block is-active"
+          v-for="item in historyReversed"
+          @click="itemClicked(item)">
+          <pre>
+            {{'\n' + item.text}}
+          </pre>
+          <br />
+          <small>{{item.clipped}}</small>
+        </a>
+      </nav>
+    </main>
+    <script>
+      // You can also require other files to run in this process
+      require('./renderer.js')
+    </script>
+  </body>
+</html>
