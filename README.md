@@ -5,7 +5,7 @@
 ## Setup
 
 ```sh
-cd electron-quick-start
+cd app
 npm install
 npm start
 ```
