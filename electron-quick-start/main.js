@@ -24,8 +24,19 @@ function createWindow () {
   mainWindow.on('show', () => {
     tray.setHighlightMode('always');
     const bounds = tray.getBounds();
-    const y = bounds.y === 0 ? 0 : bounds.y - mainWindow.height;
-    mainWindow.setPosition(bounds.x, y);
+    let y = 0;
+    let x = bounds.x;
+    if (process.platform !== 'darwin') {
+      const size = mainWindow.getSize();
+      const windowWidth = size[0];
+      const windowHeight = size[1];
+      if (bounds.y === 0) { // windows taskbar top
+        y = bounds.height;
+      } else { // windows taskbar bottom
+        y = bounds.y - windowHeight;
+      }
+    }
+    mainWindow.setPosition(x, y);
   });
 
   mainWindow.on('hide', () => {
