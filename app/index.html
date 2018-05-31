@@ -16,9 +16,7 @@
           class="panel-block is-active"
           v-for="item in historyReversed"
           @click="itemClicked(item)">
-          <pre>
-            {{'\n' + item.text}}
-          </pre>
+          <pre>{{item.text}}</pre>
           <br />
           <small>{{item.clipped}}</small>
         </a>
