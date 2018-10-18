@@ -25,6 +25,9 @@ function createWindow () {
     mainWindow.isVisible() ? mainWindow.hide() : mainWindow.show();
   });
 
+  // Hide window when window loses focus (user clicked out of window)
+  mainWindow.on('blur', () => mainWindow.hide());
+
   mainWindow.on('show', () => {
     tray.setHighlightMode('always');
     const bounds = tray.getBounds();
