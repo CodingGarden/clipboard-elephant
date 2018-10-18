@@ -14,6 +14,10 @@ function createWindow () {
     frame: false
   });
   mainWindow.hide();
+
+  // Hide the app in the dock and the cmd+tab (Mac) / alt+tab (Windows) menu
+  app.dock.hide();
+
   tray = new Tray('./icon/icon.png');
 
   // show tray when clicked on
